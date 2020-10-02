@@ -28,14 +28,16 @@ public class TmpTest {
     private DB3SQLDao db3SQLDao;
 
     @Test
-    public void insert()throws Exception{
+    public void insert(){
         Map<String,Object> insetParam = new HashMap<String,Object>(2,1){{
             put("id", SeqGenUtil.genSeq());
-            put("name","hello~");
         }};
         System.out.println("写入数据: "+ JacksonUtil.toJsonString(insetParam));
+        insetParam.put("name","I'm DB1");
         int  insert1Count = db1SQLDao.create("com.mee.xml1.tmp.insert",insetParam);
+        insetParam.put("name","I'm DB2");
         int  insert2Count = db2SQLDao.create("com.mee.xml2.tmp.insert",insetParam);
+        insetParam.put("name","I'm DB3");
         int  insert3Count = db3SQLDao.create("com.mee.xml3.tmp.insert",insetParam);
         System.out.println("======>insert1Count:"+insert1Count);
         System.out.println("======>insert2Count:"+insert2Count);
