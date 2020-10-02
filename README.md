@@ -1,7 +1,7 @@
 
 ### mee-multi-api
 ```
-  MEE-multi-api 作为一个纯后端api项目,与 mee-api 不用的是它包含多个数据源
+  mee-multi-api 作为一个纯后端api项目,与mee-api不同的是它包含多个数据源
   技术组件大致包含:
     - springboot2.3
     - postgresql
